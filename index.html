@@ -13,7 +13,7 @@ Newsletter CTA
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Echo Voices Network – Podcast Hub</title>
-<link href="styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,10 +31,12 @@ Newsletter CTA
     <section class="hero">
         <h2>Where Every Voice Finds Its Echo</h2>
         <p>Explore diverse podcasts across culture, creativity, and conversation.</p>
-        <a href="#" class="cta-btn">Browse Shows</a>
+        <a href="#episodes" class="cta-btn">Explore Episodes</a>
+        <a href="#join" class="cta-btn" id="show-contact">Join the Network</a>
+
     </section>
 
-    <section class="section">
+    <section class="section" id="episodes">
         <h3 class="section-title">Latest Episodes</h3>
         <div class="grid">
             <div class="card">
@@ -63,14 +65,47 @@ Newsletter CTA
         <p>Never miss an episode—sign up for our newsletter:</p>
         <form>
             <input type="email" placeholder="Your email" style="padding:0.5rem;width:60%;max-width:300px;" />
-            <button type="submit"
+            <button type="submit" class="cta-btn"
                 style="padding:0.5rem 1rem;margin-left:0.5rem;background:#1f1f1f;color:white;border:none;border-radius:4px;">Subscribe</button>
         </form>
     </section>
+    <section class="section" id="contact-section" style="display: none;">
+        <h3 class="section-title">Join Echo Voices</h3>
+        <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email Address" required />
+            </div>
+            <div class="form-group">
+                <input type="text" name="podcast" placeholder="Podcast Name or Idea" required />
+            </div>
+            <div class="form-group">
+                <textarea name="message" rows="4" placeholder="Tell us about your podcast..."></textarea>
+            </div>
+            <button type="submit" class="cta-btn">Submit</button>
+            <button type="button" id="hide-contact"
+                style="margin-top: 1rem; background: none; border: none; color: #1e1e2f; font-weight: bold; cursor: pointer;">✕
+                Close Form</button>
+        </form>
+    </section>
+
 
     <footer>
         <p>📧 info@echovoices.fm | &copy; 2025 Echo Voices Network</p>
     </footer>
+    <script>
+        document.getElementById('show-contact').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('contact-section').style.display = 'block';
+            document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('hide-contact').addEventListener('click', function () {
+            document.getElementById('contact-section').style.display = 'none';
+        });
+    </script>
 
 </body>
 
